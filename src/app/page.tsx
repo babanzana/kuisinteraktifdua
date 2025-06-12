@@ -1,8 +1,7 @@
 "use client";
-
-import RegistrationForm from "@/pages/register/register";
+import RootLoginRegister from "@/pages/login-register/root";
 
 export default function Home() {
   //
-  return <RegistrationForm />;
+  return <RootLoginRegister />;
 }
