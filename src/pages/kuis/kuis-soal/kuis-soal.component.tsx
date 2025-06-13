@@ -72,7 +72,7 @@ const KuisSoal: React.FC<KuisSoalProps> = ({
   onBackToLanding,
   currentUser,
 }: any) => {
-  const categoryId = category.id || "ipa";
+  const categoryId = category?.id || "ipa";
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -196,11 +196,11 @@ const KuisSoal: React.FC<KuisSoalProps> = ({
   const closeModal = async () => {
     if (isSaving) return;
 
-    if (currentUser && currentUser.id) {
+    if (currentUser && currentUser?.id) {
       setIsSaving(true);
       try {
         const result = await SaveQuizResult(
-          currentUser.id,
+          currentUser?.id,
           category.name || "Kategori Umum",
           score,
           questions.length,
